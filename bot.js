@@ -13,10 +13,10 @@ http.createServer((req, res) => {
 function arrancarBot() {
   console.log('Iniciando intento de conexion al servidor de Aternos...');
   
-  const bot = mineflayer.createBot({
-    host: 'SoulLinkForNoggas.aternos.me', // ⚠️ REEMPLAZA CON TU DIRECCIÓN DE ATERNOS
-    port: 25565,
-    username: 'Farmeapenes777',
+    const bot = mineflayer.createBot({
+    host: 'whitefish.aternos.host:56365', // ⚠️ PON AQUÍ LA IP OCULTA QUE COPIASTE
+    port: 56365,                  // ⚠️ PON AQUÍ EL PUERTO DE 5 DÍGITOS
+    username: 'HueleBraguillas23',
     version: '1.21' 
   });
 
