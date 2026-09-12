@@ -4,7 +4,8 @@ function arrancarBot() {
   console.log('Iniciando intento de conexión al servidor...');
   
   const bot = mineflayer.createBot({
-    host: 'TU_SERVIDOR.aternos.me', // ⚠️ Pon tu IP de Aternos
+    host: 'SoulLinkForNoggas.aternos.me
+', // ⚠️ Pon tu IP de Aternos
     port: 25565,
     username: 'BotEscolar247',
     version: '1.21' 
