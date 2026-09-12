@@ -7,7 +7,7 @@ function arrancarBot() {
     host: 'SoulLinkForNoggas.aternos.me
 ', // ⚠️ Pon tu IP de Aternos
     port: 25565,
-    username: 'BotEscolar247',
+    username: 'Farmea_Penes777',
     version: '1.21' 
   });
 
