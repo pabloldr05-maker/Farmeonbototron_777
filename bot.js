@@ -1,33 +1,45 @@
 const mineflayer = require('mineflayer');
 
 function arrancarBot() {
-  console.log('Iniciando intento de conexión al servidor de Minecraft...');
-
+  console.log('Iniciando intento de conexión al servidor...');
+  
   const bot = mineflayer.createBot({
-    host: 'SoulLinkForNoggas.aternos.me', // ⚠️ REEMPLAZA CON LA IP DE TU ATERNOS
-    port: 25565,                     // Puerto estándar de Java
-    username: 'FarmeadorDeTetas',       // Nombre del personaje
-    version: '1.21'                // ⚠️ CAMBIA ESTO POR LA VERSIÓN EXACTA DE TU SERVIDOR
+    host: 'TU_SERVIDOR.aternos.me', // ⚠️ Pon tu IP de Aternos
+    port: 25565,
+    username: 'BotEscolar247',
+    version: '1.21' 
   });
 
+  // Evento cuando el bot logra entrar al mundo
   bot.on('spawn', () => {
-    console.log('✅ El bot ha entrado con éxito al servidor.');
-    // Pequeña acción para que no lo eche el sistema básico AFK de inmediato
-    bot.chat('¡Bot escolar conectado desde la nube!');
+    console.log('✅ ¡El bot ha entrado al servidor!');
+    
+    // BUCLE DE ACTIVIDAD ANTIAFK: Hace que el bot se mueva para engañar a Aternos
+    setInterval(() => {
+      if (!bot.entity) return;
+
+      // Hace que el bot salte
+      bot.setControlState('jump', true);
+      setTimeout(() => bot.setControlState('jump', false), 500);
+
+      // Hace que camine hacia adelante un breve instante
+      bot.setControlState('forward', true);
+      setTimeout(() => bot.setControlState('forward', false), 1000);
+      
+      console.log('🤖 Simulando actividad física anti-AFK...');
+    }, 15000); // Se ejecuta cada 15 segundos
   });
 
-  // Lógica de reconexión automática en bucle para la nube
+  // Si Aternos nos echa o se apaga, reconectamos más rápido (cada 10 segundos)
   bot.on('end', () => {
-    console.log('❌ El servidor se ha desconectado o apagado. Reintentando conexión en 60 segundos...');
-    setTimeout(arrancarBot, 60000); 
+    console.log('❌ Conexión perdida. Reintentando en 10 segundos...');
+    setTimeout(arrancarBot, 10000); 
   });
 
   bot.on('error', (err) => {
-    console.log('⚠️ Error en la conexión:', err.message);
-    console.log('Reintentando de forma automática en 60 segundos...');
-    setTimeout(arrancarBot, 60000);
+    console.log('⚠️ Error de red:', err.message);
+    setTimeout(arrancarBot, 10000);
   });
 }
 
-// Ejecución inicial
 arrancarBot();
