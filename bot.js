@@ -7,7 +7,7 @@ function arrancarBot() {
     host: 'SoulLinkForNoggas.aternos.me', // ⚠️ REEMPLAZA CON LA IP DE TU ATERNOS
     port: 25565,                     // Puerto estándar de Java
     username: 'FarmeadorDeTetas',       // Nombre del personaje
-    version: '26.2'                // ⚠️ CAMBIA ESTO POR LA VERSIÓN EXACTA DE TU SERVIDOR
+    version: '1.21'                // ⚠️ CAMBIA ESTO POR LA VERSIÓN EXACTA DE TU SERVIDOR
   });
 
   bot.on('spawn', () => {
